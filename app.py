@@ -20,25 +20,29 @@ def logo_tag():
     p = Path(__file__).parent / "assets" / "dsi_logo.svg"
     try:
         b64 = base64.b64encode(p.read_bytes()).decode()
-        return f'<img src="data:image/svg+xml;base64,{b64}" alt="UChicago Data Science Institute" style="height:42px">'
+        return f'<img src="data:image/svg+xml;base64,{b64}" alt="UChicago Data Science Institute" style="height:40px">'
     except Exception:
         return ""
 
 st.markdown(f"""
 <style>
-  .block-container {{ padding-top: 3.5rem; max-width: 820px; }}
+  .block-container {{ padding-top: 4.2rem; max-width: 820px; }}
   #MainMenu, footer {{ visibility: hidden; }}
   .hero {{ background: linear-gradient(135deg, {MAROON} 0%, #5c0000 100%); border-radius: 16px; padding: 22px 26px; color: #fff; margin-bottom: 14px; }}
-  .hero .logo {{ background: #fff; display: inline-block; padding: 8px 14px; border-radius: 10px; margin-bottom: 14px; }}
+  .topbar {{ display:flex; align-items:center; justify-content:space-between; padding: 0 2px 12px 2px; margin-bottom: 14px; border-bottom: 1px solid #eee4e4; }}
+  .topbar .tag {{ color:#8a6f6f; font-size:0.82rem; letter-spacing:.04em; text-transform:uppercase; }}
+  [data-testid="stSidebarUserContent"] {{ padding: 1.2rem 1.1rem 1rem 1.1rem; }}
   .hero h1 {{ color: #fff; font-size: 1.7rem; margin: 0 0 4px 0; padding: 0; line-height: 1.25; }}
   .hero p {{ color: #f3dede; margin: 0; font-size: 0.98rem; }}
   [data-testid="stSidebar"] .stButton button {{ border: 1px solid #e6d9d9; border-radius: 10px; text-align: left; font-size: 0.9rem; }}
+  [data-testid="stSidebar"] .stButton button {{ justify-content: flex-start; }}
+  [data-testid="stSidebar"] .stButton button p {{ text-align: left; width: 100%; }}
   [data-testid="stSidebar"] .stButton button:hover {{ border-color: {MAROON}; color: {MAROON}; }}
   [data-testid="stChatMessage"] {{ border-radius: 14px; }}
   .fine {{ color:#777; font-size:0.78rem; text-align:center; margin-top:10px; }}
 </style>
+<div class="topbar">{logo_tag()}<span class="tag">Admissions Assistant</span></div>
 <div class="hero">
-  <div class="logo">{logo_tag()}</div>
   <h1>MS in Applied Data Science Assistant</h1>
   <p>Ask about admissions, tuition, curriculum, deadlines and more. Answers come from the official program website, with sources.</p>
 </div>
