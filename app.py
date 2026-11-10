@@ -35,8 +35,10 @@ st.markdown(f"""
   .hero h1 {{ color: #fff; font-size: 1.7rem; margin: 0 0 4px 0; padding: 0; line-height: 1.25; }}
   .hero p {{ color: #f3dede; margin: 0; font-size: 0.98rem; }}
   [data-testid="stSidebar"] .stButton button {{ border: 1px solid #e6d9d9; border-radius: 10px; text-align: left; font-size: 0.9rem; }}
-  [data-testid="stSidebar"] .stButton button {{ justify-content: flex-start; }}
-  [data-testid="stSidebar"] .stButton button p {{ text-align: left; width: 100%; }}
+  [data-testid="stSidebar"] .stButton button {{ display: flex; justify-content: flex-start; text-align: left; }}
+  [data-testid="stSidebar"] .stButton button > div,
+  [data-testid="stSidebar"] .stButton button [data-testid="stMarkdownContainer"] {{ width: 100%; display: flex; justify-content: flex-start; text-align: left; }}
+  [data-testid="stSidebar"] .stButton button p {{ text-align: left; width: 100%; margin: 0; }}
   [data-testid="stSidebar"] .stButton button:hover {{ border-color: {MAROON}; color: {MAROON}; }}
   [data-testid="stChatMessage"] {{ border-radius: 14px; }}
   .fine {{ color:#777; font-size:0.78rem; text-align:center; margin-top:10px; }}
