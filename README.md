@@ -47,6 +47,7 @@ adsbot/
 ├── rag.py              # Chunking, indexing, hybrid retrieval, reranking, LLM answer, guardrails
 ├── scrape.py           # Site crawler and HTML-to-structured-text extractor
 ├── eval.py             # Retrieval and answer evaluation on the course test set
+├── ablation.py         # Dense vs BM25 vs hybrid vs hybrid+rerank comparison
 ├── requirements.txt    # Python dependencies
 ├── assets/
 │   └── dsi_logo.svg    # Logo used in the UI header
@@ -91,6 +92,15 @@ Gold answers follow the live website, which has changed since the sample answers
 | Retrieval Hit@6 (what the LLM actually sees) | **1.00** |
 | Mean reciprocal rank | 0.82 |
 | Answer keyword recall (gpt-4o-mini) | **0.90** |
+
+Retrieval ablation (`python ablation.py`, same 15 questions, no API key needed):
+
+| System | Hit@3 | Hit@6 | MRR |
+|---|---|---|---|
+| Dense only (BGE + FAISS) | 0.60 | 0.87 | 0.79 |
+| BM25 only | 0.53 | 0.67 | 0.73 |
+| Hybrid (RRF) | 0.80 | 0.80 | 0.78 |
+| Hybrid + cross-encoder rerank (ours) | 0.80 | **1.00** | 0.82 |
 
 Notes and limitations:
 - Answer recall was 0.87 on the first run and 0.90 after a prompt revision (state both in-person and online rules) and after the gold keys accepted equivalent phrasings such as "1-2 months". MRR rose from 0.77 to 0.82 only because those gold alternatives count more passages as relevant; Hit@k did not change. A second revision (answer yes/no questions directly, then add the relevant condition) left every score unchanged.
