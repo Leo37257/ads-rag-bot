@@ -44,6 +44,9 @@ def run(use_llm=True, ks=(1,3,6)):
     return rows, summ
 
 if __name__ == "__main__":
+    import os
+    if "--llm" in sys.argv and not (os.getenv("OPENAI_API_KEY") or os.getenv("ANTHROPIC_API_KEY")):
+        sys.exit("No OPENAI_API_KEY / ANTHROPIC_API_KEY found in this terminal. Run:\n  OPENAI_API_KEY=sk-... python3 eval.py --llm")
     rows, summ = run(use_llm="--llm" in sys.argv)
     for r in rows: print(("OK  " if r["hit@6"] else "MISS"), f"h1={int(r['hit@1'])} h3={int(r['hit@3'])}", r["q"])
     print(json.dumps(summ, indent=1)); json.dump({"rows": rows, "summary": summ}, open("data/eval_results.json", "w"), indent=1)
