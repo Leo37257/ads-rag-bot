@@ -6,10 +6,10 @@ from rag import Bot, llm_complete
 GOLD = [
  ("What is tuition cost for the program?", [["$6,830"]]),
  ("What scholarships are available for the program?", [["Data Science Institute Scholarship"], ["Alumni Scholarship"]]),
- ("What are the minimum scores for the TOEFL and IELTS English Language Requirement?", [["TOEFL"], ["IELTS, 7"]]),
+ ("What are the minimum scores for the TOEFL and IELTS English Language Requirement?", [["TOEFL"], ["IELTS, 7","IELTS: 7","IELTS 7"]]),
  ("Is there an application fee waiver?", [["fee waiver", "FeeWaiver"]]),
  ("What are the deadlines for the in-person program?", [["Priority Application Deadline"], ["International Application Deadline"], ["Final Application Deadline"]]),
- ("How long will it take for me to receive a decision on my application?", [["1 to 2 months"], ["rolling basis"]]),
+ ("How long will it take for me to receive a decision on my application?", [["1 to 2 months","1-2 months","1 - 2 months"], ["rolling basis","rolling"]]),
  ("Can I set up an advising appointment with the enrollment management team?", [["Schedule an Appointment"], ["apply-psd.uchicago.edu/portal"]]),
  ("Where can I mail my official transcripts?", [["455 N Cityfront Plaza"], ["Attention: MS in Applied Data Science Admissions"]]),
  ("Does the Master's in Applied Data Science Online program provide visa sponsorship?", [["In-Person"], ["visa"]]),
