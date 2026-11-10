@@ -1,0 +1,115 @@
+{
+ "rows": [
+  {
+   "q": "What is tuition cost for the program?",
+   "hit@1": false,
+   "hit@3": true,
+   "hit@6": true,
+   "mrr": 0.5
+  },
+  {
+   "q": "What scholarships are available for the program?",
+   "hit@1": false,
+   "hit@3": true,
+   "hit@6": true,
+   "mrr": 0.5
+  },
+  {
+   "q": "What are the minimum scores for the TOEFL and IELTS English Language Requirement?",
+   "hit@1": false,
+   "hit@3": true,
+   "hit@6": true,
+   "mrr": 1.0
+  },
+  {
+   "q": "Is there an application fee waiver?",
+   "hit@1": true,
+   "hit@3": true,
+   "hit@6": true,
+   "mrr": 1.0
+  },
+  {
+   "q": "What are the deadlines for the in-person program?",
+   "hit@1": true,
+   "hit@3": true,
+   "hit@6": true,
+   "mrr": 1.0
+  },
+  {
+   "q": "How long will it take for me to receive a decision on my application?",
+   "hit@1": false,
+   "hit@3": false,
+   "hit@6": true,
+   "mrr": 0.2
+  },
+  {
+   "q": "Can I set up an advising appointment with the enrollment management team?",
+   "hit@1": true,
+   "hit@3": true,
+   "hit@6": true,
+   "mrr": 1.0
+  },
+  {
+   "q": "Where can I mail my official transcripts?",
+   "hit@1": false,
+   "hit@3": false,
+   "hit@6": true,
+   "mrr": 0.16666666666666666
+  },
+  {
+   "q": "Does the Master's in Applied Data Science Online program provide visa sponsorship?",
+   "hit@1": true,
+   "hit@3": true,
+   "hit@6": true,
+   "mrr": 1.0
+  },
+  {
+   "q": "How do I apply to the MBA/MS program?",
+   "hit@1": true,
+   "hit@3": true,
+   "hit@6": true,
+   "mrr": 1.0
+  },
+  {
+   "q": "Is the MS in Applied Data Science program STEM/OPT eligible?",
+   "hit@1": true,
+   "hit@3": true,
+   "hit@6": true,
+   "mrr": 1.0
+  },
+  {
+   "q": "How many courses must you complete to earn UChicago's Master's in Applied Data Science?",
+   "hit@1": true,
+   "hit@3": true,
+   "hit@6": true,
+   "mrr": 1.0
+  },
+  {
+   "q": "What are the core courses in the MS in Applied Data Science program?",
+   "hit@1": true,
+   "hit@3": true,
+   "hit@6": true,
+   "mrr": 1.0
+  },
+  {
+   "q": "Can you provide information about the capstone project?",
+   "hit@1": true,
+   "hit@3": true,
+   "hit@6": true,
+   "mrr": 1.0
+  },
+  {
+   "q": "What are the admission requirements?",
+   "hit@1": false,
+   "hit@3": false,
+   "hit@6": true,
+   "mrr": 0.2
+  }
+ ],
+ "summary": {
+  "hit@1": 0.6,
+  "hit@3": 0.8,
+  "hit@6": 1.0,
+  "mrr": 0.7711111111111111
+ }
+}

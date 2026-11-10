@@ -1,0 +1,9 @@
+streamlit>=1.40
+fastembed>=0.4
+faiss-cpu>=1.8
+rank_bm25>=0.2.2
+numpy
+anthropic>=0.40
+openai>=1.50
+beautifulsoup4
+requests
