@@ -89,10 +89,11 @@ Gold answers follow the live website, which has changed since the sample answers
 | Retrieval Hit@1 (all gold facts in top 1 chunk) | 0.60 |
 | Retrieval Hit@3 | 0.80 |
 | Retrieval Hit@6 (what the LLM actually sees) | **1.00** |
-| Mean reciprocal rank | 0.77 |
-| Answer keyword recall (gpt-4o-mini, first run) | 0.87 |
+| Mean reciprocal rank | 0.82 |
+| Answer keyword recall (gpt-4o-mini) | **0.90** |
 
 Notes and limitations:
+- Answer recall was 0.87 on the first run and 0.90 after one prompt revision (state both in-person and online rules) and after the gold keys accepted equivalent phrasings such as "1-2 months". MRR rose from 0.77 to 0.82 only because those gold alternatives count more passages as relevant; Hit@k did not change.
 - Small test set, and the system was tuned on it, so the numbers are optimistic.
 - Answer recall is a keyword match, which is crude: correct answers phrased differently can be undercounted.
 - Several site details change over time; re-crawl before relying on the data.
