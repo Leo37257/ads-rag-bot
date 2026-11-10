@@ -16,7 +16,8 @@ def get_bot(): return Bot()
 SAMPLES = ["What is tuition cost for the program?", "What scholarships are available?",
            "What are the TOEFL and IELTS minimum scores?", "What are the deadlines for the in-person program?",
            "Where can I mail my official transcripts?", "Is the program STEM/OPT eligible?",
-           "How many courses do I need to graduate?", "How do I apply to the MBA/MS program?"]
+           "How many courses do I need to graduate?", "What are the core courses?",
+           "Can I set up an advising appointment?", "How do I apply to the MBA/MS program?"]
 
 st.markdown("<h2 style='color:#800000;margin-bottom:0'>UChicago MS in Applied Data Science</h2>"
             "<div style='color:#555;margin-bottom:12px'>Ask about admissions, tuition, curriculum, deadlines, and more. "

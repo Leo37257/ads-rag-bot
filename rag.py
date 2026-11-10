@@ -140,6 +140,12 @@ PII = [(re.compile(r"\b\d{3}-\d{2}-\d{4}\b"), "[SSN REDACTED]"),
 INJECTION = re.compile(r"ignore (all|previous|the above)|system prompt|you are now|jailbreak|reveal your (instructions|prompt)", re.I)
 
 
+SMALLTALK = re.compile(r"^\s*(hi|hello|hey|yo|thanks|thank you|thx|good (morning|afternoon|evening)|how are you)\b[\s!.?]*$", re.I)
+NOT_FOUND = re.compile(r"(could not|couldn't|can't|cannot|unable to|did not|didn't) (find|locate)", re.I)
+GREETING = ("Hi! I can answer questions about the UChicago MS in Applied Data Science: tuition, scholarships, "
+            "deadlines, admissions requirements, curriculum, capstone and more. What would you like to know?")
+
+
 def redact_pii(text):
     for rx, rep in PII: text = rx.sub(rep, text)
     return text
@@ -190,6 +196,8 @@ class Bot:
     def ask(self, question, history=None):
         history = history or []
         q = redact_pii(question.strip())
+        if SMALLTALK.match(q):
+            return {"answer": GREETING, "sources": [], "provider": "smalltalk"}
         if INJECTION.search(q):
             return {"answer": "I can only help with questions about the MS in Applied Data Science program.", "sources": [], "provider": "guardrail"}
         search_q = condense(history, q)
@@ -202,6 +210,8 @@ class Bot:
             ans = "_(No LLM key configured - showing the most relevant passages.)_\n\n" + "\n\n".join(
                 f"**{h['heading']}**\n{h['text'].split(chr(10), 1)[1][:1000]}" for h in hits[:2])
             prov = "extractive"
+        if prov != "extractive" and NOT_FOUND.search(ans[:200]):
+            hits = []  # an answer with no support should not display unrelated sources
         return {"answer": ans, "sources": hits, "provider": prov, "search_query": search_q}
 
 
